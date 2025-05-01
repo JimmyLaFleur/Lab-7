@@ -69,12 +69,12 @@ while flag == True:
     print('1 - weather in Tallinn')
     print('2 - Rick and Morty character data')
     print('0 - exit')
-    data = int(input())
-    if data == 1:
+    data = input().strip()
+    if data == '1':
         print('')
         print(get_weather())
         print('')
-    elif data == 2:
+    elif data == '2':
         print('You want to see a list of character ids? y or n')
         f = 1;
         data2 = 1
@@ -83,15 +83,17 @@ while flag == True:
             if data1 == 'y':
                 print(get_all_characters())
                 print('Write id of character')
-                data2 = int(input())
-                f = 0
+                data2 = input()
+                if data2.isdigit():
+                    f = 0
             elif data1 == 'n':
                 print('Write id of character')
-                data2 = int(input())
-                f = 0
+                data2 = input()
+                if data2.isdigit():
+                    f = 0
             else: print("only y or n")
-        print(get_character_info(data2))
-    elif data == 0:
+        print(get_character_info(int(data2)))
+    elif data == '0':
         flag = 0
 
     else:
