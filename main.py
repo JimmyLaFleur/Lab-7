@@ -76,7 +76,7 @@ while flag == True:
         print('')
     elif data == '2':
         print('You want to see a list of character ids? y or n')
-        f = 1;
+        f = 1
         data2 = 1
         while f == True:
             data1 = input()
